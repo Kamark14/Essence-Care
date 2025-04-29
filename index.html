@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=7">
-    <meta name="description" content="Essence Care - Cosméticos Naturais. Produtos de beleza e cuidados com a pele, feitos com ingredientes naturais e orgânicos.">
+    <meta name="description"
+        content="Essence Care - Cosméticos Naturais. Produtos de beleza e cuidados com a pele, feitos com ingredientes naturais e orgânicos.">
     <meta name="keywords" content="cosméticos, naturais, beleza, cuidados com a pele, produtos orgânicos">
     <meta name="author" content="KaMark14, @kamarques_14, Kauã Marques">
     <link rel="icon" href="Img/icon-fav.png">
@@ -19,9 +20,31 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <a href="index.html"><img src="Img/logo.png" alt="Essence Care"></a>
+                <img src="Img/logo.png" alt="Essence Care">
             </div>
-
+            
+            <!-- Sidepanel Menu Mobile -->
+            <div id="mySidepanel" class="sidepanel">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <a href="index.html" class="active">Início</a>
+                <a href="#">Produtos</a>
+                <a href="#">Cuidados com a Pele</a>
+                <a href="#">Sobre Nós</a>
+                <a href="contato.html">Contato</a>
+                
+                <div class="sidepanel-icons">
+                    <div class="search-box">
+                        <input type="text" placeholder="Pesquisar...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="sidepanel-links">
+                        <a href="carrinho.html" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                        <a href="login.html" class="user-icon"><i class="fas fa-user"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nav Desktop -->
             <nav class="navbar">
                 <ul class="nav-menu">
                     <li><a href="index.html" class="active">Início</a></li>
@@ -30,21 +53,18 @@
                     <li><a href="#">Sobre Nós</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
-
+                
                 <div class="nav-icons">
                     <div class="search-box">
                         <input type="text" placeholder="Pesquisar...">
                         <button><i class="fas fa-search"></i></button>
                     </div>
-                    <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i><span
-                            class="cart-count">0</span></a>
+                    <a href="carrinho.html" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
                     <a href="login.html" class="user-icon"><i class="fas fa-user"></i></a>
                 </div>
             </nav>
-
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
+            
+            <button class="openbtn" onclick="openNav()">☰</button>
         </div>
     </header>
 
@@ -592,7 +612,7 @@
             // Mobile Menu Toggle
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const navMenu = document.querySelector('.nav-menu');
-    
+
             mobileMenuBtn.addEventListener('click', function () {
                 navMenu.classList.toggle('active');
                 mobileMenuBtn.classList.toggle('active');
