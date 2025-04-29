@@ -1,13 +1,35 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    mobileMenuBtn.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        mobileMenuBtn.classList.toggle('active');
+//Menu Mobile
+function openNav() {
+    document.getElementById("mySidepanel").style.width = "85%";
+    document.getElementById("mySidepanel").style.maxWidth = "350px";
+    document.body.classList.add("sidepanel-open");
+}
+
+function closeNav() {
+    document.getElementById("mySidepanel").style.width = "0";
+    document.body.classList.remove("sidepanel-open");
+}
+
+// Fechar o sidepanel ao clicar em um link
+document.querySelectorAll('.sidepanel a:not(.closebtn)').forEach(link => {
+    link.addEventListener('click', function() {
+        if (!this.getAttribute('href').startsWith('#')) {
+            closeNav();
+        }
     });
+});
+
+// Fechar ao clicar fora (no overlay)
+document.addEventListener('click', function(event) {
+    const sidepanel = document.getElementById('mySidepanel');
+    const openBtn = document.querySelector('.openbtn');
     
+    if (!sidepanel.contains(event.target) && 
+        event.target !== openBtn && 
+        !openBtn.contains(event.target)) {
+        closeNav();
+    }
+});
     // Slideshow Functionality
     let slideIndex = 1;
     showSlides(slideIndex);
@@ -216,4 +238,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
-});
