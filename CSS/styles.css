@@ -217,10 +217,109 @@ img {
     font-weight: bold;
 }
 
-.mobile-menu-btn {
+/* Sidepanel Styles */
+.sidepanel {
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--white);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.sidepanel a {
+    padding: 12px 8px 12px 32px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    display: block;
+    transition: 0.3s;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.sidepanel a:hover {
+    color: var(--primary-color);
+    background-color: rgba(0,0,0,0.03);
+}
+
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    color: var(--primary-color);
+    border: none;
+    background: none;
+}
+
+.sidepanel-icons {
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.sidepanel-links {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.sidepanel-links a {
+    border: none;
+    padding: 0;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.openbtn {
+    display: none;
     font-size: 1.5rem;
     cursor: pointer;
-    display: none;
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 10px 15px;
+    border: none;
+    z-index: 1000;
+}
+
+.openbtn:hover {
+    color: var(--danger-color);
+}
+
+/* Header Styles (mantenha o resto do seu CSS original) */
+.header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+/* Media Queries para Mobile */
+@media (max-width: 992px) {
+    .openbtn {
+        display: block;
+    }
+    
+    .navbar {
+        display: none;
+    }
+    
+    /* Ajuste para quando o sidepanel está aberto */
+    body.sidepanel-open {
+        overflow: hidden;
+    }
+    
+    body.sidepanel-open .header {
+        z-index: 1002;
+    }
 }
 
 /* Banner Slider */
@@ -801,7 +900,7 @@ img {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-    .nav-menu.active {
+    .nav-menu{
         display: none;
     }
     
