@@ -18,12 +18,34 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="images/logo.png" alt="Essence Care">
+                <img src="Img/logo.png" alt="Essence Care">
             </div>
             
+            <!-- Sidepanel Menu Mobile -->
+            <div id="mySidepanel" class="sidepanel">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <a href="index.html" class="active">Início</a>
+                <a href="#">Produtos</a>
+                <a href="#">Cuidados com a Pele</a>
+                <a href="#">Sobre Nós</a>
+                <a href="contato.html">Contato</a>
+                
+                <div class="sidepanel-icons">
+                    <div class="search-box">
+                        <input type="text" placeholder="Pesquisar...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="sidepanel-links">
+                        <a href="carrinho.html" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                        <a href="login.html" class="user-icon"><i class="fas fa-user"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nav Desktop -->
             <nav class="navbar">
                 <ul class="nav-menu">
-                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html" class="active">Início</a></li>
                     <li><a href="#">Produtos</a></li>
                     <li><a href="#">Cuidados com a Pele</a></li>
                     <li><a href="#">Sobre Nós</a></li>
@@ -40,9 +62,7 @@
                 </div>
             </nav>
             
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
+            <button class="openbtn" onclick="openNav()">☰</button>
         </div>
     </header>
 
@@ -127,4 +147,5 @@
         </div>
     </footer>
 </body>
+<script src="JS/script.js"></script>
 </html>
