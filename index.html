@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="description"
+        content="Essence Care - Cosméticos Naturais. Produtos de beleza e cuidados com a pele, feitos com ingredientes naturais e orgânicos.">
+    <meta name="keywords" content="cosméticos, naturais, beleza, cuidados com a pele, produtos orgânicos">
+    <meta name="author" content="KaMark14, @kamarques_14, Kauã Marques">
+    <title>Essence Care - Cosméticos Naturais</title>
+    <link rel="icon" href="Img/icon-fav.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#header"><img src="Img/logo.png" alt="Essence Care"></a>
+            </div>
+
+            <button class="openbtn" onclick="openNav()">☰</button>
+
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="#header">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#categorias">Categorias</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+
+                <div class="nav-icons">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Buscar produtos...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="cart-icon" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <div class="user-icon" id="user-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sidepanel -->
+    <div id="sidepanel" class="sidepanel">
+        <button class="closebtn" onclick="closeNav()">×</button>
+        <a href="#header">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#contato">Contato</a>
+        <div class="sidepanel-icons">
+            <div class="search-box">
+                <input type="text" placeholder="Buscar produtos...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="sidepanel-links">
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner Slider -->
+    <section class="banner-slider">
+        <div class="slideshow-container">
+            <div class="slide active">
+                <img src="Img/banner1.jpg" alt="Produtos Naturais">
+                <div class="slide-text">
+                    <h2>Cosméticos Naturais</h2>
+                    <p>Descubra nossa linha de produtos feitos com ingredientes 100% naturais e orgânicos.</p>
+                    <a href="#produtos" class="btn">Comprar Agora</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="Img/banner2.jpg" alt="Cuidados com a Pele">
+                <div class="slide-text">
+                    <h2>Cuidados com a Pele</h2>
+                    <p>Produtos especiais para todos os tipos de pele, desenvolvidos com carinho e expertise.</p>
+                    <a href="#produtos" class="btn">Ver Produtos</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="Img/banner3.jpg" alt="Promoções Especiais">
+                <div class="slide-text">
+                    <h2>Promoções Especiais</h2>
+                    <p>Aproveite nossas ofertas exclusivas com descontos de até 50% em produtos selecionados.</p>
+                    <a href="#produtos" class="btn">Ver Ofertas</a>
+                </div>
+            </div>
+
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+            <div class="dots-container">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categorias">
+        <div class="container">
+            <h2 class="section-title">Nossas Categorias</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="Img/cat1.jpg" alt="Cuidados com a Pele">
+                    <h3>Cuidados com a Pele</h3>
+                    <a href="#produtos" class="btn btn-outline">Ver Produtos</a>
+                </div>
+                <div class="category-card">
+                    <img src="Img/cat2.jpg" alt="Cabelos">
+                    <h3>Cabelos</h3>
+                    <a href="#produtos" class="btn btn-outline">Ver Produtos</a>
+                </div>
+                <div class="category-card">
+                    <img src="Img/cat3.jpg" alt="Corpo e Banho">
+                    <h3>Corpo e Banho</h3>
+                    <a href="#produtos" class="btn btn-outline">Ver Produtos</a>
+                </div>
+                <div class="category-card">
+                    <img src="Img/cat4.jpg" alt="Maquiagem">
+                    <h3>Maquiagem</h3>
+                    <a href="#produtos" class="btn btn-outline">Ver Produtos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products" id="produtos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Produtos em Destaque</h2>
+                <div class="product-filter">
+                    <select id="category-filter">
+                        <option value="all">Todas as Categorias</option>
+                        <option value="skincare">Cuidados com a Pele</option>
+                        <option value="haircare">Cuidados com o Cabelo</option>
+                        <option value="bodycare">Corpo e Banho</option>
+                        <option value="makeup">Maquiagem</option>
+                    </select>
+                    <select id="sort-by">
+                        <option value="default">Ordenar por</option>
+                        <option value="price-low">Preço: Menor para Maior</option>
+                        <option value="price-high">Preço: Maior para Menor</option>
+                        <option value="name">Nome</option>
+                    </select>
+                </div>
+            </div>
+            <div class="product-grid" id="product-grid">
+                <!-- Produtos serão carregados via JavaScript -->
+            </div>
+            <div class="view-more">
+                <a href="#produtos" class="btn">Ver Mais Produtos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contato">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Fale Conosco</h2>
+                    <p>Tem alguma dúvida, sugestão ou precisa de ajuda? Entre em contato conosco através dos canais
+                        abaixo ou preencha o formulário.</p>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Endereço</h3>
+                            <p>Rua das Flores, 123</p>
+                            <p>Jardim Primavera, São Paulo - SP</p>
+                            <p>CEP: 01234-567</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Telefone</h3>
+                            <p>(11) 3456-7890</p>
+                            <p>(11) 98765-4321 (WhatsApp)</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>E-mail</h3>
+                            <p>contato@essencecare.com</p>
+                            <p>suporte@essencecare.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Horário de Atendimento</h3>
+                            <p>Segunda a Sexta: 9h às 18h</p>
+                            <p>Sábado: 9h às 13h</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h2>Envie uma Mensagem</h2>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nome Completo *</label>
+                                <input type="text" id="name" name="name" required>
+                                <div class="error-message" id="name-error">Por favor, insira seu nome completo</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="error-message" id="email-error">Por favor, insira um e-mail válido</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Assunto *</label>
+                            <input type="text" id="subject" name="subject" required>
+                            <div class="error-message" id="subject-error">Por favor, insira o assunto</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Categoria</label>
+                            <select id="category" name="category">
+                                <option value="general">Geral</option>
+                                <option value="product">Produto</option>
+                                <option value="order">Pedido</option>
+                                <option value="complaint">Reclamação</option>
+                                <option value="suggestion">Sugestão</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensagem *</label>
+                            <textarea id="message" name="message" required></textarea>
+                            <div class="error-message" id="message-error">Por favor, insira sua mensagem</div>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Desejo receber novidades e ofertas por e-mail</label>
+                        </div>
+
+                        <button type="submit" class="btn submit-btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Assine Nossa Newsletter</h2>
+            <p>Receba novidades, promoções exclusivas e dicas de beleza natural diretamente no seu e-mail.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <button type="submit">Assinar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Sobre Nós</h3>
+                    <p>A Essence Care é uma marca comprometida com a beleza natural, oferecendo produtos de alta
+                        qualidade feitos com ingredientes naturais e orgânicos.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#categorias">Categorias</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="#produtos">Cuidados com a Pele</a></li>
+                        <li><a href="#produtos">Cabelos</a></li>
+                        <li><a href="#produtos">Corpo e Banho</a></li>
+                        <li><a href="#produtos">Maquiagem</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Rua das Flores, 123, São Paulo - SP</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>(11) 3456-7890</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@essencecare.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Essence Care. Todos os direitos reservados.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-login">&times;</span>
+            <div class="auth-form">
+                <h2>Entrar na Conta</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">E-mail</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Senha</label>
+                        <input type="password" id="login-password" required>
+                        <button type="button" class="show-password" id="show-login-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="form-options">
+                        <label>
+                            <input type="checkbox" id="remember-me"> Lembrar-me
+                        </label>
+                        <a href="#" id="forgot-password">Esqueci minha senha</a>
+                    </div>
+                    <button type="submit" class="btn auth-btn">Entrar</button>
+                </form>
+                <div class="form-footer">
+                    <p>Não tem uma conta? <a href="#" id="show-register">Cadastre-se</a></p>
+                </div>
+                <div class="social-login">
+                    <p>Ou entre com</p>
+                    <div class="social-buttons">
+                        <button class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </button>
+                        <button class="social-btn google">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-register">&times;</span>
+            <div class="auth-form">
+                <h2>Criar Conta</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Nome Completo</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">E-mail</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Senha</label>
+                        <input type="password" id="register-password" required>
+                        <button type="button" class="show-password" id="show-register-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <div class="password-strength">
+                            <div class="strength-bar"></div>
+                            <div class="strength-bar"></div>
+                            <div class="strength-bar"></div>
+                            <div class="strength-bar"></div>
+                            <span class="strength-text">Força da senha</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirmar Senha</label>
+                        <input type="password" id="confirm-password" required>
+                        <button type="button" class="show-password" id="show-confirm-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">Concordo com os <a href="#">Termos de Uso</a> e <a href="#">Política de
+                                Privacidade</a></label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter-signup">
+                        <label for="newsletter-signup">Desejo receber novidades e ofertas por e-mail</label>
+                    </div>
+                    <button type="submit" class="btn auth-btn">Criar Conta</button>
+                </form>
+                <div class="form-footer">
+                    <p>Já tem uma conta? <a href="#" id="show-login">Entrar</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal cart-modal">
+        <div class="modal-content">
+            <div class="cart-header">
+                <h2>Seu Carrinho</h2>
+                <span class="close-modal" id="close-cart">&times;</span>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Itens do carrinho serão carregados via JavaScript -->
+                <div class="empty-state">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Seu carrinho está vazio</p>
+                    <a href="#produtos" class="btn">Continuar Comprando</a>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total">R$ 0,00</span>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn" id="continue-shopping">Continuar Comprando</button>
+                    <button class="btn" id="checkout-btn">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="product-detail-modal" class="modal product-detail-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-product-detail">&times;</span>
+            <div class="product-detail-container" id="product-detail-container">
+                <!-- Detalhes do produto serão carregados via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- User Area Modal -->
+    <div id="user-area-modal" class="modal user-area-modal">
+        <div class="modal-content">
+            <div class="user-area-header">
+                <div class="user-avatar" id="user-avatar">U</div>
+                <div class="user-info">
+                    <h2 id="user-name">Usuário</h2>
+                    <p id="user-email">usuario@email.com</p>
+                </div>
+            </div>
+            <div class="user-area-content">
+                <div class="user-tabs">
+                    <div class="user-tab active" data-tab="profile">Perfil</div>
+                    <div class="user-tab" data-tab="orders">Pedidos</div>
+                    <div class="user-tab" data-tab="wishlist">Lista de Desejos</div>
+                </div>
+
+                <div class="user-tab-content active" id="profile-tab">
+                    <h3>Informações do Perfil</h3>
+                    <form id="profile-form">
+                        <div class="form-group">
+                            <label for="profile-name">Nome Completo</label>
+                            <input type="text" id="profile-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-email">E-mail</label>
+                            <input type="email" id="profile-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-phone">Telefone</label>
+                            <input type="tel" id="profile-phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-address">Endereço</label>
+                            <textarea id="profile-address"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Salvar Alterações</button>
+                    </form>
+                </div>
+
+                <div class="user-tab-content" id="orders-tab">
+                    <h3>Histórico de Pedidos</h3>
+                    <table class="order-history">
+                        <thead>
+                            <tr>
+                                <th>Pedido</th>
+                                <th>Data</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-list">
+                            <!-- Pedidos serão carregados via JavaScript -->
+                            <tr>
+                                <td colspan="4" style="text-align: center;">Nenhum pedido encontrado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="user-tab-content" id="wishlist-tab">
+                    <h3>Lista de Desejos</h3>
+                    <div id="wishlist-items">
+                        <!-- Itens da lista de desejos serão carregados via JavaScript -->
+                        <div class="empty-state">
+                            <i class="fas fa-heart"></i>
+                            <p>Sua lista de desejos está vazia</p>
+                            <a href="#produtos" class="btn">Explorar Produtos</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn logout-btn" id="logout-btn">Sair</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookies Modal -->
+    <div id="cookies-modal" class="modal cookies-modal">
+        <div class="modal-content">
+            <div class="cookies-content">
+                <h2>Cookies e Privacidade</h2>
+                <p>Utilizamos cookies para melhorar sua experiência de navegação, personalizar conteúdo e anúncios,
+                    fornecer recursos de mídia social e analisar nosso tráfego. Ao continuar navegando, você concorda
+                    com nossa política de cookies.</p>
+                <div class="cookies-actions">
+                    <button class="btn btn-accept" id="accept-cookies">Aceitar Todos</button>
+                    <button class="btn btn-decline" id="decline-cookies">Recusar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal success-modal">
+        <div class="modal-content">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2 id="success-title">Sucesso!</h2>
+                <p id="success-message">Sua ação foi concluída com sucesso.</p>
+                <button class="btn" id="success-close">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
