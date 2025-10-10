@@ -16,25 +16,14 @@ Bem-vindo ao repositório do **Essence Care**, a loja online de cosméticos natu
 
 ### Diretórios e Arquivos
 
-#### CSS
+#### css
 - `styles.css`: Estilos globais do site.
-- `produto-detalhes.css`: Estilos específicos para a página de detalhes do produto.
-- `contato.css`: Estilos para a página de contato.
-- `auth.css`: Estilos para páginas de login e cadastro.
 
-#### JS
+#### js
 - `script.js`: Scripts gerais do site.
-- `produto-detalhes.js`: Funcionalidades da página de detalhes do produto.
-- `contato.js`: Lógica para o formulário de contato.
-- `auth.js`: Lógica de autenticação.
 
 #### Outros Arquivos
-- `Img/`: Diretório contendo imagens do site.
 - `index.html`: Página inicial.
-- `produto-detalhes.html`: Página de detalhes do produto.
-- `contato.html`: Página de contato.
-- `login.html`: Página de login.
-- `cadastro.html`: Página de cadastro.
 - `README.md`: Documentação do projeto.
 
 ## 🚀 Tecnologias Utilizadas
